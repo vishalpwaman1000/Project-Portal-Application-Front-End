@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './AdminDashboard.scss'
 import GetProjectList from './GetProjectList'
+import ProjectAdminServices from '../../services/ProjectAdminServices'
 
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -24,10 +25,9 @@ import FeedbackIcon from '@material-ui/icons/Feedback'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Snackbar from '@material-ui/core/Snackbar'
 import CloseIcon from '@material-ui/icons/Close'
-import ProjectServices from '../../services/ProjectServices'
 import Switch from '@material-ui/core/Switch'
 
-const projectServices = new ProjectServices()
+const projectAdminServices = new ProjectAdminServices()
 
 export default class AdminDashboard extends Component {
   constructor(props) {
@@ -86,7 +86,7 @@ export default class AdminDashboard extends Component {
       numberOfRecordPerPage: this.state.NumberOfRecordPerPage,
     }
 
-    projectServices
+    projectAdminServices
       .GetProjectList(data)
       .then((data) => {
         console.log('Data : ', data)
@@ -126,7 +126,7 @@ export default class AdminDashboard extends Component {
         projectStatus: State.ProjectStatus,
         isActive: State.IsActive,
       }
-      projectServices
+      projectAdminServices
         .UploadProjectDetail(data)
         .then((data) => {
           console.log('Data : ', data)
@@ -171,7 +171,7 @@ export default class AdminDashboard extends Component {
         projectStatus: State.ProjectStatus,
         isActive: State.IsActive,
       }
-      projectServices
+      projectAdminServices
         .UpdateProjectDetail(data)
         .then((data) => {
           console.log('Data : ', data)
@@ -217,7 +217,7 @@ export default class AdminDashboard extends Component {
       operation: Operation,
       projectID: projectID,
     }
-    projectServices
+    projectAdminServices
       .UpdateStatus(data)
       .then((data) => {
         console.log('Data : ', data)
@@ -244,7 +244,7 @@ export default class AdminDashboard extends Component {
       projectID: ProjectID,
     }
 
-    projectServices
+    projectAdminServices
       .DeleteProjectPermanently(data)
       .then((data) => {
         console.log('Data : ', data)

@@ -1,5 +1,5 @@
 import AxiosServices from './AxiosServices'
-import Configurations from '../configurations/Configurations'
+import Configurations from '../configurations/AdminConfigurations'
 
 const axiosServices = new AxiosServices()
 

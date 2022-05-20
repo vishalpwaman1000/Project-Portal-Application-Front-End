@@ -1,9 +1,9 @@
-import Configurations from '../configurations/Configurations'
+import Configurations from '../configurations/AdminConfigurations'
 import AxiosServices from './AxiosServices'
 
 const axiosServices = new AxiosServices()
 
-export default class ProjectServices {
+export default class ProjectAdminServices {
   UploadProjectDetail(data) {
     return axiosServices.post(Configurations.UploadProjectDetail, data, false)
   }

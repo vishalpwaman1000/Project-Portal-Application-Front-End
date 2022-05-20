@@ -14,11 +14,6 @@ import TimelineDot from '@material-ui/lab/TimelineDot'
 import IconButton from '@material-ui/core/IconButton'
 
 export default function GetProjectList(props) {
-  const [checkedA, setcheckedA] = React.useState(true)
-  const handleChange = (event) => {
-    console.log('Checked : ', event.target.checked)
-    setcheckedA(event.target.checked)
-  }
 
   const Notes =
     props.List != null &&
